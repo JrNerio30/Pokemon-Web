@@ -1,0 +1,45 @@
+
+/* Keyframes Animations */
+@keyframes spin {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+/* ||HERO */
+.hero{
+  height: 100dvh;
+  background: url(../assets/pokemonkanto.jpg) center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+/* Hero Title "Pokemon" */
+.hero__title{
+  width: 100%;
+  max-width: 40rem;
+  height: auto;
+  margin-top: 1rem;
+}
+
+/* Hero Pokeball */
+.hero__pokeball{
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width:5rem;
+  animation: spin 4s infinite linear;
+  cursor: pointer;
+}
+
+/* || CONTENT */
+.content{
+ height: 100dvh;
+}
+
