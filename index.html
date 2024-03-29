@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Gotta Catch'em All</title>
     <meta name="description" content="pokemon">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./style/reset.css">
     <link rel="stylesheet" href="./style/fonts.css">
-    <link rel="stylesheet" href="./style/responsive.css">
     <link rel="stylesheet" href="./style/main.css">
+    <link rel="stylesheet" href="./style/responsive.css">
+    <link rel="stylesheet" href="https://use.typekit.net/dwj0sqq.css">
     <script src="./script/main.js" defer></script>
   </head>
   <body>
-    <header class="hero">
+    <header class="hero" id="hero">
       <ul class="hero__wrapper">
         <li class="hero__container">
           <img class="hero__title" src="./assets/pokemonlogotitle.png" alt="pokemon logo title">
@@ -23,8 +23,22 @@
         </li>
       </ul>
     </header>
-    <main class="content" id="content">
-
+    <main class="option-2-enhanced" id="content">
+      <h1 class="main__title">Kanto Region</h1>
+      <div class="option-container">
+        <!--Search box to find content on cards-->
+        <div class="box" style="text-align: center;">
+          <input id="searchbar" class="search" type="text" name="search" placeholder="Search..">
+        </div>
+      </div>
+      <div class="container">
+        <!--Display cards-->
+        <ul id="option-2-enhanced-results" class="card-container"></ul>
+      </div>
     </main>
+    <footer class="footer" id="footer">
+      <h1 class="footer__title">Hello World</h1>
+      <a class="footer__button" href="#hero">Back to Top</a>
+    </footer>
   </body>
 </html>
