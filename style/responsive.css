@@ -1,0 +1,25 @@
+@media screen and (min-width: 768px) {
+  .card {
+    flex: 1 0 30%;
+    max-width: 17.625rem;
+  }
+  .pokemoncard {
+    min-height: 15.5rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .option-2-enhanced{
+    margin-inline: 15rem;
+   }
+  .pokemoncard {
+    min-height: 16.375rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .card {
+    flex: 1 0 50%;
+  }
+}
+

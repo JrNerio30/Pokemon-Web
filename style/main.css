@@ -1,6 +1,7 @@
 /* ||SCROLL BEHAVIOR */
-html{
+body, html{
   scroll-behavior: smooth;
+  font-family: "ysans-std", sans-serif;
 }
 
 /* || ROOT */
@@ -22,7 +23,7 @@ html{
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-top: 5rem;
+  margin-top: 2rem;
 }
 
 /* Hero Title "Pokemon" */
@@ -35,7 +36,7 @@ html{
 /* Hero Pokeball */
 .hero__pokeball{
   position: absolute;
-  top: 90%;
+  top: 89%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
@@ -46,7 +47,107 @@ html{
 }
 
 /* || CONTENT */
-.content{
- height: 100dvh;
+.option-2-enhanced{
+  min-height: fit-content;
+  margin-inline: 1rem;
 }
+
+.card-container{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.card{
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0rem 0.125rem 1.5rem rgb(0 0 0 / 12%);
+  max-width: 21.1875rem;
+  flex: 1 0 45%;
+} 
+
+.main__title{
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 4rem;
+  font-size: 5rem;
+}
+
+.header{
+  font-weight: 700;
+  font-size: 25px;
+  text-transform: capitalize;
+  padding-bottom: 10px;
+}
+
+input {
+  border: 2px solid grey;
+  font-size: 1rem;
+  width: 80%;
+  height: 1rem;
+  border-radius: 25px;
+  margin-bottom: 3rem;
+  padding: 1rem;
+}
+
+
+.card-content {
+  padding: 1rem;
+}
+
+.header,
+.subheader {
+  margin: 0;
+} 
+
+.pokemoncard {
+  border-bottom: 0.25rem solid #fc0;
+  border-radius: 0.25rem 0.25rem 0 0;
+  height: auto;
+  width: 100%;
+}
+
+/* ||FOOTER */
+.footer{
+  margin-top: 20rem;
+  height: 30dvh;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.footer__title{
+  font-size: 5rem;
+  color: white;
+  font-weight: 700;
+}
+
+.footer__button{
+  text-decoration: none;
+  color: White;
+  font-size: 20px;
+  padding: 15px;
+  font-weight: 700;
+  background-color: rgb(133, 7, 7);
+  transition: all 100ms;
+}
+
+.footer__button:hover{
+  transform: translateX(5px) translateY(-5px);
+  box-shadow: -6px 6px 0px 0px white, -5px 5px 0px 0px white, -4px 4px 0px 0px white,  -3px 3px 0px 0px white,  -2px 2px 0px 0px white, -1px 1px 0px 0px white;
+}
+
+.footer__button:active{
+  transform: translateX(0) translateY(0);
+  box-shadow: none;
+}
+
+
+
+
+
 
