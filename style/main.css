@@ -1,3 +1,10 @@
+/* ||SCROLL BEHAVIOR */
+html{
+  scroll-behavior: smooth;
+}
+
+/* || ROOT */
+
 
 /* Keyframes Animations */
 @keyframes spin {
@@ -15,7 +22,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-
+  margin-top: 5rem;
 }
 
 /* Hero Title "Pokemon" */
@@ -23,17 +30,17 @@
   width: 100%;
   max-width: 40rem;
   height: auto;
-  margin-top: 1rem;
 }
 
 /* Hero Pokeball */
 .hero__pokeball{
   position: absolute;
-  top: 85%;
+  top: 90%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 1;
   width: 100%;
-  max-width:5rem;
+  max-width:4rem;
   animation: spin 4s infinite linear;
   cursor: pointer;
 }
