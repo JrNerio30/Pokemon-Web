@@ -22,7 +22,7 @@ async function fetch150PokemonList() {
   try {
 
     const response = await fetch(
-      "https://pokeapi.co/api/v2/pokemon?offset=0&limit=150"
+      "https://pokeapi.co/api/v2/pokemon?offset=150&limit=150"
     );
     const data = await response.json();
     return data.results;
@@ -43,22 +43,37 @@ async function fetchPokemonDetails(url) {
   }
 }
 
-async function fetch150PokemonDetails() {
+// Fetch details for Pokemon from 151(start) to 250(end) Which is the Johto region pretty much
+async function fetch150PokemonDetails(start, end) {
   const detailsList = [];
-  for (let i = 1; i <= 150; i++) {
-    const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
-    const data = await fetchPokemonDetails(url);
+  // the length of the end (250) minus the length of start(150) + 1 (the last legendary of the Johto Region "Ho-Oh")
+  // so in the PokeAPI "https://pokeapi.co/api/v2/pokemon?offset=150&limit=150", I'm only grabbing the Johto Pokemon Region.
+  const urls = Array.from({ length: end - start + 1}, (_, i) => `https://pokeapi.co/api/v2/pokemon/${start + i}`);
+  // using "promise.all()" allows the API call to fetch each details of the Pokemon simultaneously (BATCHING API CALLS)
+  // for loops iterates through each of the 150 Pokemon details 1 by 1 which slows it down.
+  const response = await Promise.all(urls.map(url => fetchPokemonDetails(url)));
+  // Filter out and collect valid data
+  response.forEach(data => {
     if (data) {
       detailsList.push(data);
     }
-  }
-
+  });
   return detailsList;
 }
 
-
+// Added Lazy Loading Scroll Event for optimizing the overall performance of the website
 async function renderOption2Enhanced() {
-  const data = await fetch150PokemonDetails();
+  const data = await fetch150PokemonDetails(150, 250);
+  // Render Initial batch of 20 Pokemon Cards
+  // This sets up the lazy loading event
+  const batch = data;
+  renderCards(batch);
+}
+
+renderOption2Enhanced()
+
+// HTML elements for the Pokemon Cards
+function renderCards(data){
   const cards = createCardElements(
     data.map((item) => ({
       title: item.name,
@@ -69,7 +84,25 @@ async function renderOption2Enhanced() {
   document.getElementById("option-2-enhanced-results").innerHTML = cards;
 }
 
-renderOption2Enhanced();
+// If the user scrolls to fast >
+// To prevent multiple simultanoeous loading request for lazy loading
+// This ensures that only one loading request is processed at a time
+let isLoading = false;
+// Lazy Loading Event > More Cards as the user scrolls
+window.addEventListener("scroll", () => {
+  // if the user is currently not scrolling and they are near the bottom of the page
+  if(!isLoading && window.innerHeight + window.scrollY >= document.body.offsetHeight - 500) {
+    isLoading = true;
+    loadMore(); // Load more cards
+  }
+});
+
+// Function to load more cards
+// This ensures a smooth and controlled process of loading additional content as the user scrolls through the page
+async function loadMore(){
+  const data = await fetch150PokemonDetails();
+  isLoading = false;
+}
 
 
 function searchbarEventHandler() {
