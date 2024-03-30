@@ -2,6 +2,7 @@
 body, html{
   scroll-behavior: smooth;
   font-family: "ysans-std", sans-serif;
+  background-color: rgb(31, 30, 30);
 }
 
 /* || ROOT */
@@ -60,18 +61,35 @@ body, html{
 }
 
 .card{
-  background-color: #fff;
+  background-color: black;
   border-radius: 4px;
   box-shadow: 0rem 0.125rem 1.5rem rgb(0 0 0 / 12%);
   max-width: 21.1875rem;
-  flex: 1 0 45%;
+  flex: 1 0 50%;
+  cursor: pointer;
+  transition: all 100ms;
 } 
+
+.card:hover{
+  transform: translateX(6px) translateY(-6px);
+  box-shadow:
+   -6px 6px 0px 0px #FF0000, -5px 5px 0px 0px #FF0000, 
+   -4px 4px 0px 0px #FF0000,  -3px 3px 0px 0px #FF0000,  
+   -2px 2px 0px 0px #FF0000, -1px 1px 0px 0px #FF0000;
+}
+
+.card:active{
+  transform: translateX(0) translateY(0);
+  box-shadow: none;
+}
 
 .main__title{
   font-weight: 700;
   text-align: center;
   margin-bottom: 4rem;
-  font-size: 5rem;
+  font-size: clamp(2rem, 5vw, 5vw);
+  padding-top: 7rem;
+  color: white;
 }
 
 .header{
@@ -79,6 +97,13 @@ body, html{
   font-size: 25px;
   text-transform: capitalize;
   padding-bottom: 10px;
+  color: white;
+  text-align: center;
+}
+
+.subheader{
+  color: white;
+  text-align: center;
 }
 
 input {
@@ -102,7 +127,6 @@ input {
 } 
 
 .pokemoncard {
-  border-bottom: 0.25rem solid #fc0;
   border-radius: 0.25rem 0.25rem 0 0;
   height: auto;
   width: 100%;
@@ -121,7 +145,7 @@ input {
 }
 
 .footer__title{
-  font-size: 5rem;
+  font-size: clamp(2rem, 4vw, 4vw);
   color: white;
   font-weight: 700;
 }
@@ -138,7 +162,10 @@ input {
 
 .footer__button:hover{
   transform: translateX(5px) translateY(-5px);
-  box-shadow: -6px 6px 0px 0px white, -5px 5px 0px 0px white, -4px 4px 0px 0px white,  -3px 3px 0px 0px white,  -2px 2px 0px 0px white, -1px 1px 0px 0px white;
+  box-shadow: 
+  -6px 6px 0px 0px white, -5px 5px 0px 0px white, 
+  -4px 4px 0px 0px white,  -3px 3px 0px 0px white,  
+  -2px 2px 0px 0px white, -1px 1px 0px 0px white;
 }
 
 .footer__button:active{
