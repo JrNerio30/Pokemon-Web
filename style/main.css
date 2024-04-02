@@ -5,7 +5,7 @@ body, html{
   background-color: rgb(31, 30, 30);
 }
 
-/* || ROOT */
+/* || KEYFRAMES ANIMATION */
 
 
 /* Keyframes Animations */
@@ -73,9 +73,9 @@ body, html{
 .card:hover{
   transform: translateX(6px) translateY(-6px);
   box-shadow:
-   -6px 6px 0px 0px #FF0000, -5px 5px 0px 0px #FF0000, 
-   -4px 4px 0px 0px #FF0000,  -3px 3px 0px 0px #FF0000,  
-   -2px 2px 0px 0px #FF0000, -1px 1px 0px 0px #FF0000;
+   -6px 6px 0px 0px white, -5px 5px 0px 0px white, 
+   -4px 4px 0px 0px white,  -3px 3px 0px 0px white,  
+   -2px 2px 0px 0px white, -1px 1px 0px 0px white;
 }
 
 .card:active{
@@ -171,6 +171,13 @@ input {
 .footer__button:active{
   transform: translateX(0) translateY(0);
   box-shadow: none;
+}
+
+.numbers{
+  color: grey;
+  text-align: center;
+  padding-top: 0.5rem;
+  font-size: 0.855rem;
 }
 
 
