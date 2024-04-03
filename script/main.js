@@ -59,17 +59,6 @@ async function fetch150PokemonDetails(start, end) {
   return detailsList;
 }
 
-function list(){
-  const hash = []
-  for(let k = 0; k <= 10; k++){
-    hash.push(k)
-  } 
-
-  return hash;
-}
-console.log(list())
-
-
 // Added Lazy Loading Scroll Event for optimizing the overall performance of the website
 async function renderOption2Enhanced() {
   const data = await fetch150PokemonDetails(152, 251);
