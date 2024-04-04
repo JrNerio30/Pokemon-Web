@@ -2,12 +2,13 @@
 body, html{
   scroll-behavior: smooth;
   font-family: "ysans-std", sans-serif;
-  background: linear-gradient(333deg, rgba(37,6,113,1) 0%, rgba(128,10,64,1) 28%, rgba(27,4,17,1) 56%, rgba(37,6,113,1) 100%);}
+  background: linear-gradient(333deg, rgba(37,6,113,1) 0%, rgba(128,10,64,1) 28%, rgba(27,4,17,1) 56%, rgba(37,6,113,1) 100%);
+}
 
 /* || KEYFRAMES ANIMATION */
 
 
-/* Keyframes Animations */
+/* || KEYFRAMES */
 @keyframes spin {
   from{
     transform: rotate(0deg);
@@ -17,7 +18,17 @@ body, html{
   }
 }
 
-/* ||HERO */
+@keyframes gradientshine {
+  from{
+    background: linear-gradient(333deg, rgba(0,0,0,1) 0%, rgba(128,10,64,1) 92%, rgba(0,0,0,1) 100%);
+  }
+  to{
+    background: linear-gradient(333deg, rgba(0,0,0,1) 0%, rgba(128,10,64,1) 6%, rgba(0,0,0,1) 100%);
+  }
+  
+}
+
+/* || HERO */
 .hero{
   height: 100dvh;
   background: url(../assets/pokemonkanto.jpg) center/cover no-repeat;
@@ -52,39 +63,7 @@ body, html{
   margin-inline: 1rem;
 }
 
-.card-container{
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-}
-
-.card{
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  background-color: rgba(0, 0, 0, 0.75);
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.125);
-  box-shadow: 0rem 0.125rem 1.5rem rgb(0 0 0 / 12%);
-  max-width: 21.1875rem;
-  flex: 1 0 50%;
-  cursor: pointer;
-  transition: all 100ms;
-} 
-
-.card:hover{
-  transform: translateX(6px) translateY(-6px);
-  box-shadow:
-   -6px 6px 0px 0px white, -5px 5px 0px 0px white, 
-   -4px 4px 0px 0px white,  -3px 3px 0px 0px white,  
-   -2px 2px 0px 0px white, -1px 1px 0px 0px white;
-}
-
-.card:active{
-  transform: translateX(0) translateY(0);
-  box-shadow: none;
-}
-
+/* Title of the main */
 .main__title{
   font-weight: 700;
   text-align: center;
@@ -94,6 +73,41 @@ body, html{
   color: white;
 }
 
+/* Card Container */
+.card-container{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+/* The Pokemon Cards */
+.card{
+  background-color: black;
+  border-radius: 5px;
+  max-width: 21.1875rem;
+  flex: 1 0 50%;
+  cursor: pointer;
+  transition: all 1s cubic-bezier(0.99, 0, 0, 1.01);
+} 
+
+/* Pokemon Cards hover effects */
+.card:hover{
+  animation: gradientshine 1s cubic-bezier(0.99, 0, 0, 1.01);
+  background: linear-gradient(333deg, rgba(0,0,0,1) 0%, rgba(128,10,64,1) 6%, rgba(0,0,0,1) 100%);
+  transform: translateX(6px) translateY(-6px);
+  box-shadow:
+   -6px 6px 0px 0px white, -5px 5px 0px 0px white, 
+   -4px 4px 0px 0px white,  -3px 3px 0px 0px white,  
+   -2px 2px 0px 0px white, -1px 1px 0px 0px white;
+}
+
+/* Pokemon cards onclick/active effect */
+.card:active{
+  transform: translateX(0) translateY(0);
+  box-shadow: none;
+}
+/* Pokemon Card Header (Names) */
 .header{
   font-weight: 700;
   font-size: 25px;
@@ -103,11 +117,13 @@ body, html{
   text-align: center;
 }
 
+/* Pokemon Card Subheader (types) */
 .subheader{
   color: white;
   text-align: center;
 }
 
+/* Pokemon Search Bar */
 input {
   border: 2px solid grey;
   font-size: 1rem;
@@ -118,28 +134,31 @@ input {
   padding: 1rem;
 }
 
-
+/* Card Content */
 .card-content {
   padding: 1rem;
 }
+
 
 .header,
 .subheader {
   margin: 0;
 } 
 
-.pokemoncard {
+/* Pokemon Image */
+.card > .pokemoncard {
   border-radius: 0.25rem 0.25rem 0 0;
   height: auto;
   width: 100%;
   transition: all 0.3s ease-in-out;
 }
 
+/* Pokemon Image Hover Effect*/
 .card > .pokemoncard:hover{
   transform: scale(1.3);
 }
 
-/* ||FOOTER */
+/* || FOOTER */
 .footer{
   margin-top: 20rem;
   height: 30dvh;
@@ -151,12 +170,14 @@ input {
   gap: 3rem;
 }
 
+/* Footer Title */
 .footer__title{
   font-size: clamp(2rem, 4vw, 4vw);
   color: white;
   font-weight: 700;
 }
 
+/* Footer Button */
 .footer__button{
   text-decoration: none;
   color: White;
@@ -167,6 +188,7 @@ input {
   transition: all 100ms;
 }
 
+/* Footer Button Hover Effect */
 .footer__button:hover{
   transform: translateX(5px) translateY(-5px);
   box-shadow: 
@@ -175,11 +197,13 @@ input {
   -2px 2px 0px 0px white, -1px 1px 0px 0px white;
 }
 
+/* Footer Button Active Effect */
 .footer__button:active{
   transform: translateX(0) translateY(0);
   box-shadow: none;
 }
 
+/* Index Numbers for the each of the Pokemon Cards */
 .numbers{
   color: grey;
   text-align: center;
