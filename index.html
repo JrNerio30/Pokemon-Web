@@ -14,16 +14,23 @@
     <script src="./script/main.js" defer></script>
   </head>
   <body>
+    
     <header class="hero" id="hero">
       <ul class="hero__wrapper">
         <li class="hero__container">
           <img class="hero__title" src="./assets/pokemonlogotitle.png" alt="pokemon logo title">
         </li>
-        <li class="hero__container--pokeball">
-          <a href="#content"><img class="hero__pokeball"  src="./assets/pokeball.png" alt="small red pokeball"></a>
-        </li>
+        <a href="#aboutID">
+          <div class="hero__button">
+            <span class="hero__button--arrows" title="Arrow Button"></span>
+            <span class="hero__button--arrows" title="Arrow Button"></span>
+            <span class="hero__button--arrows" title="Arrow Button"></span>
+          <p class="hero__button__text" role="link">this is just a text</p>
+        </div>
+      </a>
       </ul>
     </header>
+
     <main class="option-2-enhanced" id="content">
       <h1 class="main__title">Johto Region</h1>
       <div class="option-container">
@@ -37,9 +44,11 @@
         <ul id="option-2-enhanced-results" class="card-container"></ul>
       </div>
     </main>
+
     <footer class="footer" id="footer">
       <h1 class="footer__title">Hello World</h1>
       <a class="footer__button" href="#hero">Back to Top</a>
     </footer>
+
   </body>
 </html>
