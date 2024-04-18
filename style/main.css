@@ -28,13 +28,75 @@ body, html{
   
 }
 
+@keyframes arrowsScrollIndicator {
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
 /* || HERO */
 .hero{
+  background: url(../assets/snorlaxsleeping.gif) center;
   height: 100dvh;
-  background: url(../assets/pokemonkanto.jpg) center/cover no-repeat;
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+    /* Hero Button */
+    .hero__button{
+      display: block;
+      position: absolute;
+      bottom: 5%;
+      right: 50%;
+      transform: translate(-50% -50%);
+      cursor: pointer;
+    }
+  
+    /* Hero Scroll Arrows */
+    .hero__button--arrows{
+      /* mix-blend-mode: difference; */
+      display: block;
+      width: 20px;
+      height: 20px;
+      border-bottom: 1.5px solid white;
+      border-right: 1.5px solid white;
+      transform: rotate(45deg);
+      margin: -8px;
+      animation: arrowsScrollIndicator 1s infinite linear;
+    }
+  
+    /* Hero Button Text Link */
+    .hero__button__text{
+      display: none;
+    }
+  
+    /* Hero Scroll Arrow Span 1 */
+    .hero__button > .hero__button--arrows:nth-child(1){
+      animation-delay: 0.2s;
+    }
+  
+    /* Hero Scroll Arrow Span 2 */
+    .hero__button > .hero__button--arrows:nth-child(2){
+      animation-delay: 0.3s;
+    }
+  
+    /* Hero Scroll Arrow Span 3 */
+    .hero__button > .hero__button--arrows:nth-child(3){
+      animation-delay: 0.4s;
+    }
+
+.snorlaxvideo{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
 }
 
 /* Hero Title "Pokemon" */
@@ -42,6 +104,7 @@ body, html{
   width: 100%;
   max-width: 40rem;
   height: auto;
+  z-index: 2;
 }
 
 /* Hero Pokeball */
@@ -55,6 +118,7 @@ body, html{
   max-width:4rem;
   animation: spin 4s infinite linear;
   cursor: pointer;
+  z-index: 2;
 }
 
 /* || CONTENT */
