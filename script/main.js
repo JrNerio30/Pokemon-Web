@@ -38,6 +38,7 @@ async function fetch150PokemonList() {
     console.log(error);
   }
 }
+console.log(fetch150PokemonList());
 
 // Fetches details of Pokemon from a given URL
 async function fetchPokemonDetails(url) {
