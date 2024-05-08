@@ -9,8 +9,8 @@
 }
 
 @media screen and (min-width: 1200px) {
-  .option-2-enhanced{
-    margin-inline: 15rem;
+  .main{
+    padding-inline: 15rem;
    }
   .pokemoncard {
     min-height: 16.375rem;
