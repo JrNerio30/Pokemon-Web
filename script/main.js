@@ -88,7 +88,7 @@ function renderCards(data) {
       subtitle: item.types.map((type) => type.type.name).join(", "),
     }))
   );
-  document.getElementById("option-2-enhanced-results").innerHTML = cards;
+  document.getElementById("main-results").innerHTML = cards;
 }
 
 // Loads more Pokemon Details when the user scrolls down
@@ -112,7 +112,7 @@ async function loadMore() {
 function searchbarEventHandler() {
   let input = document.getElementById("searchbar").value;
   input = input.toLowerCase();
-  const enhancedResults = document.getElementById("option-2-enhanced-results");
+  const enhancedResults = document.getElementById("main-results");
   const card = enhancedResults.getElementsByClassName("card");
 
   for (i = 0; i < card.length; i++) {
@@ -127,3 +127,18 @@ function searchbarEventHandler() {
 // For keyup events on the search bar.
 const searchbar = document.getElementById("searchbar");
 searchbar.addEventListener("keyup", searchbarEventHandler);
+
+// Cards Scroll Animation
+window.addEventListener("scroll", function () {
+  const cards = document.querySelectorAll(".card");
+
+  cards.forEach(function(cardsList){
+    const cardsPosition = cardsList.getBoundingClientRect();
+
+    if(cardsPosition.top < this.window.innerHeight && cardsPosition.bottom >= 0){
+      cardsList.classList.add("visible");
+    }
+  });
+});
+
+
