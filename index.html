@@ -6,14 +6,46 @@
     <meta name="description" content="pokemon">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./style/reset.css">
-    <link rel="stylesheet" href="./style/fonts.css">
     <link rel="stylesheet" href="./style/main.css">
     <link rel="stylesheet" href="./style/responsive.css">
     <link rel="stylesheet" href="https://use.typekit.net/dwj0sqq.css">
     <link rel="icon" type="imga/x-icon" href="./assets/pokeballfavicon.png">
-    <script src="./script/main.js" defer></script>
   </head>
   <body>
+
+    <section class="nav">
+      <nav class="nav-bar">
+        <a href="#hero"><img class="nav-logo" src="./assets/pokemonlogotitle.png" alt="pokeball"></a>
+        <ul class="navigation-container">
+          <li class="nav-list">
+            <a class="nav-links" href="#hero">Home</a>
+          </li>
+          <li class="nav-list dropdown">
+            <a class="region-dropdown" href="index.html#regionsID">Regions ▼</a>
+            <ul class="dropdown-content">
+              <li class="region-list"><a class="region-links" href="./pages/kanto.html">Kanto</a></li>
+              <li class="region-list"><a class="region-links" href="./pages/johto.html">Johto</a></li>
+              <li class="region-list"><a class="region-links" href="./pages/hoenn.html">Hoenn</a></li>
+              <li class="region-list"><a class="region-links" href="./pages/sinnoh.html">Sinnoh</a></li>
+              <li class="region-list"><a class="region-links" href="./pages/unova.html">Unova</a></li>
+              <li class="region-list"><a class="region-links" href="./pages/kalos.html">Kalos</a></li>
+              <li class="region-list"><a class="region-links" href="./pages/alola.html">Alola</a></li>
+              <li class="region-list"><a class="region-links" href="./pages/galar.html">Galar</a></li>
+              <li class="region-list"><a class="region-links" href="./pages/paldea.html">Paldea</a></li>
+            </ul>
+          </li>
+          <li class="nav-list">
+            <a class="nav-links" href="#hero">Games</a>
+          </li>
+          <li class="nav-list">
+            <a class="nav-links" href="#hero">News</a>
+          </li>
+          <li class="nav-list">
+            <a class="nav-links" href="#hero">Anime</a>
+          </li>
+        </ul>
+      </nav>
+    </section>
     
     <header class="hero" id="hero">
       <ul class="hero__wrapper">
@@ -23,23 +55,46 @@
       </ul>
     </header>
 
-    <nav class="navigation">
+    <nav class="navigation" id="regionsID">
       <h1 class="navigation-title">Choose a Region</h1>
       <ul class="navigation-regions-container">
         <li class="navigation-regions">
-          <a class="navigation-links" href="./pages/johto.html"><h2 class="navigation-links-title">kanto Region</h2></a>
+          <a class="navigation-links" href="./pages/kanto.html"><h2 class="navigation-links-title">kanto Region</h2></a>
         </li>
         <li class="navigation-regions">
           <a class="navigation-links" href="./pages/johto.html"><h2 class="navigation-links-title">Johto Region</h2></a>
         </li>
         <li class="navigation-regions">
-          <a class="navigation-links" href="./pages/johto.html"><h2 class="navigation-links-title">Hoenn Region</h2></a>
+          <a class="navigation-links" href="./pages/hoenn.html"><h2 class="navigation-links-title">Hoenn Region</h2></a>
         </li>
         <li class="navigation-regions">
-          <a class="navigation-links" href="./pages/johto.html"><h2 class="navigation-links-title">Sinnoh Region</h2></a>
+          <a class="navigation-links" href="./pages/sinnoh.html"><h2 class="navigation-links-title">Sinnoh Region</h2></a>
+        </li>
+        <li class="navigation-regions">
+          <a class="navigation-links" href="./pages/unova.html"><h2 class="navigation-links-title">Unova Region</h2></a>
+        </li>
+        <li class="navigation-regions">
+          <a class="navigation-links" href="./pages/kalos.html"><h2 class="navigation-links-title">Kalos Region</h2></a>
+        </li>
+        <li class="navigation-regions">
+          <a class="navigation-links" href="./pages/alola.html"><h2 class="navigation-links-title">Alola Region</h2></a>
+        </li>
+        <li class="navigation-regions">
+          <a class="navigation-links" href="./pages/galar.html"><h2 class="navigation-links-title">Galar Region</h2></a>
+        </li>
+        <li class="navigation-regions">
+          <a class="navigation-links" href="./pages/paldea.html"><h2 class="navigation-links-title">Paldea Region</h2></a>
+        </li>
+        <li class="navigation-regions">
+          <a class="navigation-links" href="./pages/kitakami.html"><h2 class="navigation-links-title">Kitakami Region</h2></a>
         </li>
       </ul>
     </nav>
+
+    <footer class="footer" id="footer">
+      <a href="./index.html#hero"><img class="footer-image" src="./assets/pokemonlogotitle.png" alt="pokemon title"></a>
+      <a class="footer__button" href="#hero">Back to Top</a>
+    </footer>
 
   </body>
 </html>

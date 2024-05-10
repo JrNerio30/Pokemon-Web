@@ -6,17 +6,6 @@ body, html{
 
 /* || KEYFRAMES ANIMATION */
 
-
-/* || KEYFRAMES */
-@keyframes spin {
-  from{
-    transform: rotate(0deg);
-  }
-  to{
-    transform: rotate(360deg);
-  }
-}
-
 @keyframes gradientshine {
   from{
     background: linear-gradient(333deg, rgba(0,0,0,1) 0%, rgba(128,10,64,1) 92%, rgba(0,0,0,1) 100%);
@@ -27,48 +16,46 @@ body, html{
   
 }
 
-@keyframes arrowsScrollIndicator {
-  0%{
-    opacity: 0;
-  }
-  50%{
-    opacity: 1;
-  }
-  100%{
-    opacity: 0;
-  }
+/* || HERO REGIONS */
+.hero-regions{
+  height: 60vh;
+  background: url(../assets/regionbackground.jpg) center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* || HERO */
 .hero{
-  background: url(../assets/snorlaxsleeping.gif) center;
-  height: 100dvh;
+  background: url(../assets/herobackground.png) center/cover no-repeat;
+  height: 60dvh;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-/* Snorlax GIF */
-.snorlaxvideo{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100vw;
-}
-
 /* Hero Title "Pokemon" */
 .hero__title{
   width: 100%;
-  max-width: 60rem;
+  max-width: 40rem;
   height: auto;
   z-index: 2;
   padding-top: 9rem;
 }
 
+.hero__title--region{
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 4rem;
+  font-size: clamp(2rem, 5vw, 5vw);
+  color: white;
+  padding-top: 7rem;
+}
+
 /* || CONTENT */
 .main{
   min-height: fit-content;
-  padding-inline: 1rem;
+  padding: 1rem;
   background-color: rgb(15, 15, 15);
 }
 
@@ -77,8 +64,7 @@ body, html{
   font-weight: 700;
   text-align: center;
   margin-bottom: 4rem;
-  font-size: clamp(2rem, 5vw, 5vw);
-  padding-top: 7rem;
+  font-size: clamp(2rem, 3vw, 3vw);
   color: white;
 }
 
@@ -92,19 +78,12 @@ body, html{
 
 /* The Pokemon Cards */
 .card{
-  opacity: 0;
-  transform: translateY(5rem);
   background-color: black;
   border-radius: 5px;
   max-width: 21.1875rem;
   flex: 1 0 50%;
   transition: all 1s;
 } 
-
-.card.visible{
-  opacity: 1;
-  transform: translateY(0);
-}
 
 /* Pokemon Cards hover effects */
 .card:hover{
@@ -175,7 +154,6 @@ input {
 
 /* || FOOTER */
 .footer{
-  margin-top: 20rem;
   height: 30dvh;
   background-color: black;
   display: flex;
@@ -186,8 +164,9 @@ input {
 }
 
 /* Footer Title */
-.footer__title{
-  font-size: clamp(2rem, 4vw, 4vw);
+.footer-image{
+  width: 100%;
+  max-width: 20rem;
   color: white;
   font-weight: 700;
 }
@@ -226,6 +205,8 @@ input {
   font-size: 0.855rem;
 }
 
+
+/* || POKEMON REGIONS */
 .navigation{
   min-height: 100vh;
   display: flex;
@@ -233,7 +214,7 @@ input {
   justify-content: center;
   flex-direction: column;
   gap: 5rem;
-  padding-bottom: 10rem;
+  margin-bottom: 7rem;
 }
 
 .navigation-title{
@@ -271,26 +252,25 @@ input {
 
 .navigation-regions-container >
 .navigation-regions{
+  box-shadow: 0 0 5px 0 black;
   transition: all 0.3s;
+  border: 2px solid black;
 }
 
 .navigation-regions-container >
-.navigation-regions.hovering{
-  box-shadow: 0 0 10px 2px black;
-  background:   
-  linear-gradient(
-    rgba(0, 0, 0, 0.7), 
-    rgba(0, 0, 0, 0.7)
-  ), ;
+.navigation-regions:hover{
+  transform: scale(1.05);
+  box-shadow: 0 0 8px 2px black;
 }
+
 .navigation-regions-container >
 .navigation-regions:nth-child(1){
   background: 
   linear-gradient(
-  rgba(0, 0, 0, 0.4), 
-  rgba(0, 0, 0, 0.4)
+  rgba(0, 0, 0, 0.5), 
+  rgba(0, 0, 0, 0.5)
   ), 
-  url(../assets/kanto.jpg) center/cover;
+  url(../assets/maps/kanto.jpg) center/cover;
   border-radius: 10px;
 }
 
@@ -298,10 +278,10 @@ input {
 .navigation-regions:nth-child(2){
   background:  
   linear-gradient(
-    rgba(0, 0, 0, 0.4), 
-    rgba(0, 0, 0, 0.4)
+    rgba(0, 0, 0, 0.5), 
+    rgba(0, 0, 0, 0.5)
   ),  
-  url(../assets/johto.jpg) center/cover;
+  url(../assets/maps/johto.jpg) center/cover;
   border-radius: 10px;
 }
 
@@ -309,10 +289,10 @@ input {
 .navigation-regions:nth-child(3){
   background:  
   linear-gradient(
-    rgba(0, 0, 0, 0.4), 
-    rgba(0, 0, 0, 0.4)
+    rgba(0, 0, 0, 0.5), 
+    rgba(0, 0, 0, 0.5)
   ),  
-  url(../assets/hoenn.jpg) center/cover;
+  url(../assets/maps/hoenn.jpg) center/cover;
   border-radius: 10px;
 }
 
@@ -320,12 +300,219 @@ input {
 .navigation-regions:nth-child(4){
   background:  
   linear-gradient(
-    rgba(0, 0, 0, 0.4), 
-    rgba(0, 0, 0, 0.4)
+    rgba(0, 0, 0, 0.5), 
+    rgba(0, 0, 0, 0.5)
   ),  
-  url(../assets/sinnoh.jpg) center/cover;
+  url(../assets/maps/sinnoh.jpg) center/cover;
   border-radius: 10px;
 }
+
+.navigation-regions-container >
+.navigation-regions:nth-child(5){
+  background:  
+  linear-gradient(
+    rgba(0, 0, 0, 0.5), 
+    rgba(0, 0, 0, 0.5)
+  ),  
+  url(../assets/maps/unova.jpg) center/cover;
+  border-radius: 10px;
+}
+
+.navigation-regions-container >
+.navigation-regions:nth-child(6){
+  background:  
+  linear-gradient(
+    rgba(0, 0, 0, 0.5), 
+    rgba(0, 0, 0, 0.5)
+  ),  
+  url(../assets/maps/kalos.jpg) center/cover;
+  border-radius: 10px;
+}
+
+.navigation-regions-container >
+.navigation-regions:nth-child(7){
+  background:  
+  linear-gradient(
+    rgba(0, 0, 0, 0.5), 
+    rgba(0, 0, 0, 0.5)
+  ),  
+  url(../assets/maps/alola.jpg) center/cover;
+  border-radius: 10px;
+}
+
+.navigation-regions-container >
+.navigation-regions:nth-child(8){
+  background:  
+  linear-gradient(
+    rgba(0, 0, 0, 0.5), 
+    rgba(0, 0, 0, 0.5)
+  ),  
+  url(../assets/maps/galar.jpg) center/cover;
+  border-radius: 10px;
+}
+
+.navigation-regions-container >
+.navigation-regions:nth-child(9){
+  background:  
+  linear-gradient(
+    rgba(0, 0, 0, 0.5), 
+    rgba(0, 0, 0, 0.5)
+  ),  
+  url(../assets/maps/paldea.jpg) center/cover;
+  border-radius: 10px;
+}
+
+.navigation-regions-container >
+.navigation-regions:nth-child(10){
+  background:  
+  linear-gradient(
+    rgba(0, 0, 0, 0.5), 
+    rgba(0, 0, 0, 0.5)
+  ),  
+  url(../assets/maps/kitakami.jpeg) center/cover;
+  border-radius: 10px;
+}
+
+/* || NAVIGTAION MENU */
+.nav{
+  min-height: 1vh;
+  background-color: white;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+
+.nav-bar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo{
+  width: 100px;
+  margin-right: 3rem;
+}
+
+.navigation-container{
+  display: flex;
+}
+
+.nav-list{
+  position: relative;
+  display: inline-block;
+  padding: 2rem 1rem;
+}
+
+.nav-links{
+  text-decoration: none;
+  padding: 1.96rem 1rem;
+  color: black;
+  font-size: 20px;
+  border: none;
+}
+
+.nav-links.hover{
+  color: white;
+}
+
+.navigation-container > .nav-list{
+  transition: all 0.3s;
+}
+
+.navigation-container > .nav-list .nav-links{
+  transition: all 0.3s;
+}
+
+.navigation-container > .nav-list:hover .nav-links{
+  color: white;
+}
+
+.navigation-container > .nav-list:nth-child(1):hover{
+  background-color: #FF0000;
+}
+
+.navigation-container > .nav-list:nth-child(2):hover{
+  background-color: #CC0000;
+}
+
+.navigation-container > .nav-list:nth-child(3):hover{
+  background-color: #3B4CCA;
+}
+
+.navigation-container > .nav-list:nth-child(4):hover{
+  background-color: #FFDE00;
+}
+
+.navigation-container > .nav-list:nth-child(5):hover{
+  background-color: #B3A125;
+}
+
+
+.region-links{
+  color: black;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.region-dropdown {
+  text-decoration: none;
+  padding: 1.96rem 1rem;
+  color: black;
+  font-size: 20px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0%;
+  min-width: 10rem;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content .region-links {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  transition: all 0.3s;
+}
+
+.navigation-container > .nav-list .region-dropdown{
+  transition: all 0.3s;
+}
+
+.navigation-container > .nav-list:hover .region-dropdown{
+  color: white;
+}
+
+.dropdown-content .region-links:hover {
+  background-color: #CC0000;
+  color: white;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+
+
+
+
 
 
 
