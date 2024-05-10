@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Gotta Catch'em All</title>
+    <meta name="description" content="pokemon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="imga/x-icon" href="../assets/pokeballfavicon.png">
+    <link rel="stylesheet" href="../style/reset.css">
+    <link rel="stylesheet" href="../style/main.css">
+    <link rel="stylesheet" href="../style/responsive.css">
+    <link rel="stylesheet" href="https://use.typekit.net/dwj0sqq.css">
+    <script src="../src/kanto.js" async></script>
+  </head>
+  <body>
+
+    <section class="nav">
+      <nav class="nav-bar">
+        <a href="../index.html#hero"><img class="nav-logo" src="../assets/pokemonlogotitle.png" alt="pokeball"></a>
+        <ul class="navigation-container">
+          <li class="nav-list">
+            <a class="nav-links" href="../index.html#hero">Home</a>
+          </li>
+          <li class="nav-list dropdown">
+            <a class="region-dropdown" href="../index.html#regionsID">Regions ▼</a>
+            <ul class="dropdown-content">
+              <li class="region-list"><a class="region-links" href="kanto.html">Kanto</a></li>
+              <li class="region-list"><a class="region-links" href="johto.html">Johto</a></li>
+              <li class="region-list"><a class="region-links" href="hoenn.html">Hoenn</a></li>
+              <li class="region-list"><a class="region-links" href="sinnoh.html">Sinnoh</a></li>
+              <li class="region-list"><a class="region-links" href="unova.html">Unova</a></li>
+              <li class="region-list"><a class="region-links" href="kalos.html">Kalos</a></li>
+              <li class="region-list"><a class="region-links" href="alola.html">Alola</a></li>
+              <li class="region-list"><a class="region-links" href="galar.html">Galar</a></li>
+              <li class="region-list"><a class="region-links" href="paldea.html">Paldea</a></li>
+              <li class="region-list"><a class="region-links" href="kitakami.html">Kitakami</a></li>
+            </ul>
+          </li>
+          <li class="nav-list">
+            <a class="nav-links" href="#hero">Games</a>
+          </li>
+          <li class="nav-list">
+            <a class="nav-links" href="#hero">News</a>
+          </li>
+          <li class="nav-list">
+            <a class="nav-links" href="#hero">Anime</a>
+          </li>
+        </ul>
+      </nav>
+    </section>
+    
+    <header class="hero-regions">
+      <h1 class="hero__title--region">Kanto Region</h1>
+    </header>
+
+    <main class="main" id="content">
+      <div class="main-container">
+        <h1 class="main__title">Search Pokemon</h1>
+        <div class="box" style="text-align: center;">
+          <input id="searchbar" class="search" type="text" name="search" placeholder="Search..">
+        </div>
+      </div>
+      <div class="container">
+        <ul id="main-results" class="card-container"></ul>
+      </div>
+    </main>
+
+    <footer class="footer" id="footer">
+      <a href="../index.html#hero"><img class="footer-image" src="../assets/pokemonlogotitle.png" alt="pokemon title"></a>
+      <a class="footer__button" href="#">Back to Top</a>
+    </footer>
+
+  </body>
+</html>
